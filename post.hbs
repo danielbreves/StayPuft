@@ -14,14 +14,9 @@
             {{/if}}
 
             <h1 class="post-title">{{title}}</h1>
-            
+
             <section class="post-meta">
-                <span class="post-time">
-                    <i class='fa fa-calendar'></i>
-                    <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
-                    <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
-                </span>
-                {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
+              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
@@ -76,6 +71,7 @@
 
         </footer>
 
+        {{!--
         <section class="post-comments">
             <div id="disqus_thread"></div>
             <script type="text/javascript">
@@ -92,6 +88,7 @@
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
+        --}}
 
         {{!--
         <aside class="read-next">

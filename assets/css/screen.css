@@ -110,10 +110,15 @@ html {
 body {
     height: 100vh;
     max-height: 100vh;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Merriweather', sans-serif;
+    letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.6em;
     color: #3A4145;
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
+    text-rendering: geometricPrecision;
 }
 
 ::-moz-selection {
@@ -128,6 +133,9 @@ body {
 
 h1, h2, h3,
 h4, h5, h6 {
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
@@ -135,7 +143,7 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     line-height: 1.2em;
     letter-spacing: -2px;
     text-indent: -3px;
@@ -469,6 +477,7 @@ margin on the iframe, cause it breaks stuff. */
 .post {
     position: relative;
     max-width: inherit;
+    padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
     margin-bottom: 2rem;
@@ -503,7 +512,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-excerpt p {
     margin: 1.6rem 0 0 0;
     font-size: 0.9em;
-    line-height: 1.6em;
+    line-height: 1.7em;
 }
 
 .read-more {
@@ -512,11 +521,19 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-meta {
     display: inline-block;
-    margin: 8px 0;
+    margin: 1.75rem 0 0 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.4em;
     color: #9EABB3;
+}
+
+.author-thumb {
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 9px;
+    border-radius: 100%;
 }
 
 .post-meta a {
@@ -538,6 +555,16 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     padding: 0.3rem 40px 0 100px;
     min-height: 77px;
+}
+
+.post-date {
+    display: inline-block;
+    margin-left: 8px;
+    padding-left: 12px;
+    border-left: #d5dbde 1px solid;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    white-space: nowrap;
 }
 
 .user-image {
@@ -597,7 +624,7 @@ main
     right: 0px;
     top: 0px;
     bottom: 0px;
-    padding: 4rem 15%;
+    padding: 3.65rem 5%;
 }
 
 .main-inner
@@ -631,7 +658,7 @@ main
     margin-top: 1px;
     right: 10px;
     position: absolute; /* must be set to absolute */
-} 
+}
 
 #results
 {
@@ -772,6 +799,24 @@ main
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
+.post-template .post-header {
+  margin-bottom: 3.4rem;
+}
+
+.post-template .post-title {
+   margin-bottom: 0;
+}
+
+.post-template .post-meta {
+   margin: 0;
+}
+
+.post-template .post-date {
+   padding: 0;
+   margin: 0;
+   border: none;
+}
+
 /* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
@@ -784,23 +829,23 @@ main
     display: none;
 }
 
-/* Stop elements, such as img wider than the post content, from 
-   creating horizontal scroll - slight hack due to imperfections 
+/* Stop elements, such as img wider than the post content, from
+   creating horizontal scroll - slight hack due to imperfections
    with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
 }
 
-/* Keep images centered, and allow images wider than the main 
+/* Keep images centered, and allow images wider than the main
    text column to break out. */
 .post-content img {
     display: block;
     max-width: 126%;
     height: auto;
     padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the 
-       center of its container and (2) shifting the entire image 
-       in the opposite direction by half its own width. 
+    /* Centers an image by (1) pushing its left edge to the
+       center of its container and (2) shifting the entire image
+       in the opposite direction by half its own width.
        Works for images that are larger than their containers. */
     position: relative;
     left: 50%;
@@ -831,10 +876,9 @@ main
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 4rem 0;
-    padding: 4rem 0 0 0;
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
     border-top: #EBF2F6 1px solid;
-    border-bottom: #EBF2F6 1px solid;
 }
 
 .post-footer h4 {
@@ -845,7 +889,7 @@ main
 .post-footer p {
     margin: 1rem 0;
     font-size: 1.4rem;
-    line-height: 1.6em;
+    line-height: 1.75em;
 }
 
 /* list of author links - location / url */
@@ -871,67 +915,42 @@ main
     margin-right: 180px;
 }
 
+.post-footer h4 a {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+.post-footer h4 a:hover {
+    text-decoration: underline;
+}
+
 /* Drop the share links in the space to the right.
    Doing it like this means it's easier for the author bio
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
-    top: 3rem;
+    top: 6rem;
     right: 0;
     width: 140px;
-    text-align: center;
 }
 
 .post-footer .share a {
-    font-size: 3rem;
+    font-size: 1.8rem;
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
 }
 
-.post-footer .share a.fa:first-child {
-    margin-left: 0;
+.post-footer .share .icon-twitter:hover {
+    color: #55acee;
 }
-
-.post-footer .share a.fa:last-child {
-    margin-right: 0;
-}
-
-.post-footer .share a:hover {
-    color: #50585D;
-}
-.post-footer .share a.fa-twitter-square:hover {
-    color: #55acee !important;
-}
-.post-footer .share a.fa-facebook-square:hover {
+.post-footer .share .icon-facebook:hover {
     color: #3b5998;
 }
-.post-footer .share a.fa-google-plus-square:hover {
+.post-footer .share .icon-google-plus:hover {
     color: #dd4b39;
-}
-
-.author-image {
-    float: left;
-    margin-right: 12px;
-    margin-bottom: 20px;
-}
-
-.author-image img {
-    border-radius: 100%;
-}
-
-.author-text {
-    overflow: hidden;
-}
-
-.author-meta p {
-    margin: 0;
-}
-
-.post.page {
-    margin-bottom: calc(40px + 4rem);
 }
 
 /* ==========================================================================
