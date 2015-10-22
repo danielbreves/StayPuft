@@ -35,20 +35,26 @@
             <h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
             <h3 class="blog-description">{{@blog.description}}</h3>
 
+            {{!--
             <form id="search">
                 <input id="search-field" placeholder="Search"/>
             </form>
+            --}}
 
             <div id="sidebar-links">
+                {{!--
                 <ul id="subscription-links">
                     <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>Subscribe via RSS</a></li>
                     <!-- No support yet
                     <li><a target="_blank" href=" "><i class="fa fa-envelope"></i>Subscribe via email<a></li>
                     -->
                 </ul>
+
                 <ul id="navigation">
                     {{navigation}}
                 </ul>
+                --}}
+
                 <ul id="sidebar-external">
                     {{> sidebar-external}}
                 </ul>
@@ -57,8 +63,7 @@
             <footer class="site-footer">
                 <section class="copyright">{{> copyright}}</section>
                 <section class="poweredby">
-                    <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a> -
-                    <a href="https://github.com/dlecina/StayPuft">StayPuft theme</a>
+                    <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a>
                 </section>
             </footer>
         </div>
@@ -79,15 +84,6 @@
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism-loader.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-    <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
-    <script>
-        $("#search-field").ghostHunter({
-            rss : "{{@blog.url}}/rss/",
-            results : "#results",
-            onKeyUp : true,
-            zeroResultsInfo : false
-        });
-    </script>
 </body>
 
 </html>
