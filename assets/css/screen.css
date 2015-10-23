@@ -118,6 +118,8 @@ body {
     background-color: #fafafa;
 }
 
+figure { margin: 0; }
+
 ::-moz-selection {
     color: #222;
     background: #D6EDFF;
@@ -1452,6 +1454,10 @@ main
         left: 0px;
     }
 
+    .main-inner {
+        padding: 5px 20px;
+    }
+
     .post {
         width: 100%;
     }
@@ -1501,7 +1507,16 @@ main
     }
 
     main {
-        padding: 40px 8%;
+        padding: 20px 3%;
+    }
+
+    .post-template .post {
+        padding-bottom: 0;
+    }
+
+    .post-template .post-header {
+        padding: 30px 0;
+        margin-bottom: 0;
     }
 }
 
@@ -1539,14 +1554,6 @@ main
 
     h4 {
         font-size: 2rem;
-    }
-
-    .post-template .post {
-        padding-bottom: 0;
-    }
-
-    .post-template .post-header {
-        padding: 30px 0;
     }
 
     .post-content img {
@@ -1610,10 +1617,6 @@ main
 
     .site-footer {
         font-size: 1.1rem;
-    }
-
-    main {
-        padding: 40px 12px;
     }
 
     .blog-description {
