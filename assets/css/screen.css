@@ -355,6 +355,8 @@ main dl {
   -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   text-rendering: geometricPrecision;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 main h1,
