@@ -28,53 +28,54 @@
 </head>
 
 <body class="{{body_class}}">
+    <div class="container">
+      <div id="sidebar" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+          <div id="sidebar-content" class="inner">
+              {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+              <h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
+              <h3 class="blog-description">{{@blog.description}}</h3>
 
-    <div id="sidebar" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-        <div id="sidebar-content" class="inner">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            <h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
-            <h3 class="blog-description">{{@blog.description}}</h3>
+              {{!--
+              <form id="search">
+                  <input id="search-field" placeholder="Search"/>
+              </form>
+              --}}
 
-            {{!--
-            <form id="search">
-                <input id="search-field" placeholder="Search"/>
-            </form>
-            --}}
+              <div id="sidebar-links">
+                  {{!--
+                  <ul id="subscription-links">
+                      <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>Subscribe via RSS</a></li>
+                      <!-- No support yet
+                      <li><a target="_blank" href=" "><i class="fa fa-envelope"></i>Subscribe via email<a></li>
+                      -->
+                  </ul>
 
-            <div id="sidebar-links">
-                {{!--
-                <ul id="subscription-links">
-                    <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>Subscribe via RSS</a></li>
-                    <!-- No support yet
-                    <li><a target="_blank" href=" "><i class="fa fa-envelope"></i>Subscribe via email<a></li>
-                    -->
-                </ul>
+                  <ul id="navigation">
+                      {{navigation}}
+                  </ul>
+                  --}}
 
-                <ul id="navigation">
-                    {{navigation}}
-                </ul>
-                --}}
+                  <ul id="sidebar-external">
+                      {{> sidebar-external}}
+                  </ul>
+              </div>
 
-                <ul id="sidebar-external">
-                    {{> sidebar-external}}
-                </ul>
-            </div>
+              <footer class="site-footer">
+                  <section class="copyright">{{> copyright}}</section>
+                  <section class="poweredby">
+                      <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a>
+                  </section>
+              </footer>
+          </div>
+      </div>
 
-            <footer class="site-footer">
-                <section class="copyright">{{> copyright}}</section>
-                <section class="poweredby">
-                    <i class="icon-ghost"></i><a href="https://ghost.org">Ghost</a>
-                </section>
-            </footer>
-        </div>
+      <main>
+          <div class="main-inner">
+              <section id="results"></section>
+              {{{body}}}
+          </div>
+      </main>
     </div>
-
-    <main>
-        <div class="main-inner">
-            <section id="results"></section>
-            {{{body}}}
-        </div>
-    </main>
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}

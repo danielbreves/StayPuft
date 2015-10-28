@@ -393,7 +393,7 @@ main h6 {
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
-    width: 80%;
+    display: table;
     margin: 0 auto;
 }
 
@@ -614,12 +614,17 @@ main h6 {
     line-height: 1.5em;
 }
 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 #sidebar
 {
     position: fixed;
     top: 0px;
-    left: 0px;
-    width: 283px;
+    width: 222px;
+    margin: 0 64px;
     height: 100vh;
     z-index: 100;
     background-size: cover;
@@ -629,12 +634,9 @@ main h6 {
 
 main
 {
-    position: absolute;
-    left: 260px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    padding: 3.65rem 5%;
+    position: relative;
+    margin-left: 286px;
+    padding: 3.65rem 64px;
 }
 
 .main-inner
@@ -1441,6 +1443,7 @@ main
         text-align: center;
         width: 100%;
         height: auto;
+        margin: 0;
         padding: 16px 0px;
     }
 
@@ -1452,6 +1455,8 @@ main
     main {
         position: relative;
         left: 0px;
+        margin: 0 auto;
+        display: table;
     }
 
     .main-inner {
