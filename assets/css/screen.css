@@ -877,6 +877,10 @@ main
     transform: translateX(-50%);
 }
 
+.post-content a {
+  color: #000;
+}
+
 /* Footnotes */
 .footnotes {
     font-style: italic;
