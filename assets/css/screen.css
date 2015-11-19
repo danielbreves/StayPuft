@@ -16,7 +16,7 @@
     9.  Pagination
     10. Footer
     11. Media Queries (Tablet)
-    12. Media Queries (Mobile)
+    12. Media Queries (Mobilepos)
     13. Animations
 
 */
@@ -863,7 +863,7 @@ main
    text column to break out. */
 .post-content img {
     display: block;
-    max-width: 126%;
+    max-width: 100%;
     height: auto;
     padding: 0.6em 0;
     /* Centers an image by (1) pushing its left edge to the
